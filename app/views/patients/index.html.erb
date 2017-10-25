@@ -1,0 +1,12 @@
+<section id="home">
+  <div class="container">
+    <b>Name of patient:</b> <%=@patient["name"][0]["given"][0]%> <%= @patient["name"][0]["family"][0]%><br>
+    <b>Organization name:</b> <%= @patient["managingOrganization"]["display"]%><br>
+    <b>Gender:</b> <%= @patient["gender"]%><br>
+    <b>Number of conditions they have: </b><%= @patient["conditions"].size%><br>
+    <b>List of all condition:</b> <br>
+    <% @patient["conditions"].each do |condition|%>
+      - <%=condition%><br>
+    <%end%>
+  </div>
+</section>
